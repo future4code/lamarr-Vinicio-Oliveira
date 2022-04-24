@@ -107,6 +107,10 @@ function retornaUltimoElemento(array) {
 // EXERCÍCIO 11
 function trocaPrimeiroEUltimo(array) {
   // implemente sua lógica aqui
+  let primeiro = array[0]
+  let ultimo = array[array.length - 1]
+  array[0] = ultimo
+  array[array.length - 1] = primeiro
   return array
 
 }
