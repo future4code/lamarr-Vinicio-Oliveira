@@ -59,26 +59,91 @@ function retornaMaiorNumero(array) {
 
 // EXERCÍCIO 07
 function retornaObjetoEntreDoisNumeros(num1, num2) {
+   function maior(num1, num2) {
+       if(num1 > num2) {
+           return num1
+       } else {
+           return num2
+       }
+   }
+   function menor(num1, num2) {
+       if(num1 > num2) {
+           return num2
+       } else {
+           return num1
+       }
+   }
+   function divisao() {
+       let resDivisao = maior(num1, num2) % menor(num1, num2)
+       if(resDivisao === 0) {
+           return true
+       } else {
+           return false
+       }
+   }
+   function diferenca(num1, num2) {
+       if(num1 > num2) {
+           return num1 - num2
+       } else {
+           return num2 - num1
+       }
+   }
 
+   let propriedades = {
+       maiorNumero: maior(num1, num2), 
+       maiorDivisivelPorMenor: divisao(num1, num2),
+       diferenca: diferenca(num1, num2)
+   }
+   return propriedades
 }
 
 // EXERCÍCIO 08
 function retornaNPrimeirosPares(n) {
-   
+    let numerosPares = [];
+    for (let i = 0; numerosPares.length < n; i += 2) {
+        numerosPares.push(i);
+    }
+    return numerosPares;
 }
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
-
+    let triangulo
+    if( ladoA === ladoB && ladoA && ladoB === ladoC) {
+        console.log(triangulo = "Equilátero")
+    } else if (ladoA === ladoB && ladoA && ladoB != ladoC || ladoA === ladoC && ladoA && ladoC != ladoB || ladoB === ladoC && ladoB && ladoC != ladoA) {
+        console.log(triangulo = "Isósceles")
+    } else {
+        console.log(triangulo = "Escaleno")
+    }
+    return triangulo
 }
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {
-  
+    let arr = []
+    array.sort(ordem)
+    function ordem(a, b) {
+        return a - b
+    }
+    let segundo = array[1]
+    let penultimo = array[array.length - 2]
+    arr.push(penultimo, segundo)
+
+    return arr
 }
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
+    let obj = {
+        nome: "O Diabo Veste Prada",
+        ano: 2006,
+        diretor: "David Frankel",
+        atores: ["Meryl Streep", " Anne Hathaway", " Emily Blunt", " Stanley Tucci"]
+    }
+    let chamada = `Venha assistir ao filme ${obj.nome}, de ${obj.ano}, dirigido por ${obj.diretor} e estrelado por ${obj.atores}.`
+
+    return chamada
    
 }
 
