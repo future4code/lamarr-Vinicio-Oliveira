@@ -1,0 +1,30 @@
+Boa noite, vou falar um pouco de como foi a aula de ontem pra mim.
+Vamos lá pelo primeiro passo:
+
+1- Ter atenção no enunciado: o mínimo que se deve fazer é prestar atenção, ler,
+reler, ler de novo até entender. Eu tenho bastante dificuldade com interpretação
+preciso ler muito, repetir e entender o que o exercício pede e ja ir pensando
+em o que o código precisa fazer.
+
+2- Retirar informações relevantes: Como ja lemos bastante o enunciado e entendemos,
+ja vamos ter algumas informações imporantes como variável, nomes de funçoes, 
+condição para a existência do código.
+
+3- Pensar nas entradas e saídas: Eu gosto de usar papel e caneta enquanto leio o enunciado
+do exercício, isso me ajuda e entender e coloco nele as informaçoes que tenho e onte
+eu preciso receber, e nesse meio eu tento bolar um código
+
+4- Fazer um esquema visual: Esse eu nunca usei, mas ontem na aula ele foi muito 
+útil e vou aderir, porque nos dá uma visão bem ampla de qual código é melhor 
+utilizar.
+
+5- Criar um código feio: Bom, ese ajuda muito, bolar um código mesmo que seja grande
+e não muito arumado, depois de funcional sim podemos tentar melhorar ele e fazer um código
+"bonito".
+
+6- Testar: Força Bruta: Pelo que entendi desse passo, jogar no papel e ir criando
+um código em portugês mesmo e depois transcrever para linguagem de programação 
+que desejar.
+
+7- Reformatar: Ver o que pode melhorar, colocar nomes melhores e que vão dar um 
+entendimento melhor ao código.
