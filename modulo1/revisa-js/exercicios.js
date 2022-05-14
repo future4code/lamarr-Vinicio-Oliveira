@@ -224,19 +224,3 @@ function retornaArrayOrdenadoAlfabeticamente(consultas) {
 function retornaArrayOrdenadoPorData(consultas) {
  
 }
-
-
-
-
-
-
-
-
-
-
-// function retornaArrayOrdenadoPorData(consultas) {
-//     function compara(data1, data2) {
-//         return data1 < data2
-//     }
-//     return consultas.sort(compara)
-//   }
