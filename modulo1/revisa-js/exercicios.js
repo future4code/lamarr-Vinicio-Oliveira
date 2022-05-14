@@ -149,30 +149,94 @@ function retornaChamadaDeFilme(filme) {
 
 // EXERCÍCIO 12
 function retornaPessoaAnonimizada(pessoa) {
+    let obj = {
+        nome: pessoa.nome,
+        idade: pessoa.idade,
+        email: pessoa.email,
+        endereco: pessoa.endereco
+    }
+
+    let newObj = {
+        ...obj,
+        nome: "ANÔNIMO"
+        
+    }
+
+    return newObj
    
 }
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {
-   
+    const pessoasAutorizadas = []
+    for (let pessoa of pessoas) {
+        if(pessoa.altura > 1.5 && pessoa.idade > 14 && pessoa.idade < 70) {
+            pessoasAutorizadas.push(pessoa)   
+        }
+    }
+    return pessoasAutorizadas
 }
 
 // EXERCÍCIO 13B
 function retornaPessoasNaoAutorizadas(pessoas) {
-  
+    const pessoasAutorizadas = []
+    const pessoasNaoAutorizadas = []
+
+    for (let pessoa of pessoas) {
+        if(pessoa.altura > 1.5 && pessoa.idade > 14 && pessoa.idade < 70) {
+            pessoasAutorizadas.push(pessoa)   
+        } else {
+            pessoasNaoAutorizadas.push(pessoa)
+        }
+    }
+    return pessoasNaoAutorizadas
 }
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
-
+    let soma = 0
+    for (let conta of contas){
+        for(let i = 0; i < conta.compras.length; i++) {
+            soma = soma + conta.compras[i]
+        }
+        conta.saldoTotal = conta.saldoTotal - soma
+        conta.compras = []
+        soma = 0
+    }
+    return contas
 }
 
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
-  
+    consultas.sort((a, b) => {
+        if(a.nome < b.nome) {
+            return - 1
+        }
+        if(a.nome > b.nome) {
+            return 1
+        }
+        return 0
+    })
+    return consultas
 }
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
-   
+ 
 }
+
+
+
+
+
+
+
+
+
+
+// function retornaArrayOrdenadoPorData(consultas) {
+//     function compara(data1, data2) {
+//         return data1 < data2
+//     }
+//     return consultas.sort(compara)
+//   }
