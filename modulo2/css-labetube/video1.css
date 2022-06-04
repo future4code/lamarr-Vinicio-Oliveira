@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.pai-de-todos {
+    display: grid;
+    grid-template-rows: 100px 77vh 10vh;
+}
+
+header {
+    background: orange;
+    display: grid;
+    grid-template-columns: 190px 1fr;
+    justify-items: end;
+    align-items: center;
+    
+}
+main {
+    display: grid;
+    align-items: center;
+    gap: 10px;
+}
+.busca {
+    margin-right: 40px;
+    padding: 15px 10px 15px 10px;
+}
+.vid {
+    width: 900px;
+}
+
+.videos {
+    display: grid;
+    padding-left: 150px;
+}
+
+footer {
+    background: rgb(37, 37, 37);
+}
+
+.ultimo-texto {
+    font-size: 42px;
+    color: white;
+    font-weight: bold; 
+    padding: 10px;
+}
