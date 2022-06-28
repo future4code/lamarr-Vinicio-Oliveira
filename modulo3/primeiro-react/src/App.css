@@ -1,0 +1,25 @@
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imagem {
+  width: 20vw;
+}
+
+p {
+  font-size: 26px;
+}
+
+button {
+  margin-top: 10px;
+}
+
+
+.App-link {
+  color: #61dafb;
+}
+
+
