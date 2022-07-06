@@ -1,10 +1,6 @@
 import React from 'react';
 import Post from './components/Post/Post';
-import './style.css'
-import perfil1 from './img/perfil1.png'
-import perfil2 from './img/perfil2.png'
-import foto1 from './img/foto1.webp'
-import foto2 from './img/foto2.jpg'
+import {MainContainer} from './style'
 
 
 function App() {
@@ -15,12 +11,12 @@ function App() {
       fotoPost: 'https://picsum.photos/200/150'
     },
     {
-      nomeUsuario: 'pati',
+      nomeUsuario: 'Pati',
       fotoUsuario: 'https://picsum.photos/51',
       fotoPost: 'https://picsum.photos/200/152'      
     },
     {
-      nomeUsuario: 'gui',
+      nomeUsuario: 'Gui',
       fotoUsuario: 'https://picsum.photos/50',
       fotoPost: 'https://picsum.photos/200/151',
     }
@@ -33,9 +29,9 @@ function App() {
     fotoPost={elemento.fotoPost}></Post>
   })
 return(
-  <div className='MainContainer'>
+  <MainContainer>
       {arrayPosts}   
-  </div>
+  </MainContainer>
 )
 
 }
