@@ -1,6 +1,7 @@
 import './App.css';
 import logotipo from './img/foguinho.jpg'
 import styled from 'styled-components'
+import { useState } from 'react';
 
 const Comeco = styled.header`
   display: flex;
@@ -15,35 +16,41 @@ const Container = styled.div`
   display: flex;
 `
 const Direito = styled.nav`
-  width: 200px;
+  width: 400px;
   background-color: orange;
 `
 
 const Meio = styled.main`
   width: 100%;
   display: flex;
-  justify-content: center;
-  padding: 560px 0 20px 0;
-  margin-left: 30px;
- // background-color: lightgray;
+  justify-content: space-around;
+  align-items: flex-end;
+  padding: 0 0 20px 0;
+  height: 580px;
+  background-color: #f2eadd;
 `
 const Escreve = styled.input`
   margin-right: 10px;
   width: 180px;
+  border-radius: 5px;
 `
 
 const Escreve2 = styled.input`
   width: 500px;
+  border-radius: 5px;
 `
 
 
 const Botao = styled.button`
   margin-left: 15px;
 `
+const Chat = styled.div`
+  display: flex;
+  justify-content: center;
+`
 
 const Esquerdo = styled.aside`
-  width: 200px;
-  height: 600px;
+  width: 400px;
   background-color: orange;
 `
 
@@ -56,7 +63,39 @@ const Rodape = styled.footer`
   justify-content: center;
 `
 
+
+
 function App() {
+  const [inputRemetente, setInputRemetente] = useState("")
+  const [inputMensagem, setInputMensagem] = useState("")
+  const [conversa, setConversa] = useState([
+
+  ])
+
+  const handleInputRemetente = (e) => {
+    setInputRemetente(e.target.value)
+  }
+
+  const handleInputMensagem = (e) => {
+    setInputMensagem(e.target.value)
+  }
+
+  const iniciarConversa = (e) => {
+
+    const iniciarConversa = {remetente: inputRemetente, mensagem: inputMensagem}
+    const novaConversa = [iniciarConversa]
+    setConversa(novaConversa)
+  }
+
+  const chat = conversa.map((mensagem, index) => {
+    return (
+      <Chat key={index}>
+        {mensagem.remetente} 
+        {mensagem.mensagem}
+      </Chat>
+    )
+  })
+
   return (
     <div>
       <Comeco>
@@ -64,15 +103,20 @@ function App() {
         <h1>WhatsLab</h1>
       </Comeco>
       <Container>
-        <Direito>
-        </Direito>
+        <Direito/>
         <Meio>
-            <Escreve placeholder="Remetente:" />
-            <Escreve2 placeholder="Msg:" />
-            <Botao>Envia Mensagem</Botao>
+            <Escreve placeholder="Remetente:"
+            value={inputRemetente}
+            onChange={handleInputRemetente} 
+            />
+            <Escreve2 placeholder="Msg:"
+            value={inputMensagem}
+            onChange={handleInputMensagem}
+            />
+            <Botao onClick={iniciarConversa}>Envia Mensagem</Botao>
         </Meio>
-        <Esquerdo>
-        </Esquerdo>
+            {chat}
+        <Esquerdo/>
       </Container>
       <Rodape>
         <p>Copyright © 2022 Vinício All rights reserved R. Pedro Alvares Cabral, 1500, Vila Nova CEP 15896-000 </p>
@@ -80,5 +124,6 @@ function App() {
     </div>
   );
 }
+console.log(App)
 
 export default App;
