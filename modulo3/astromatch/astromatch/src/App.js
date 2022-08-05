@@ -1,11 +1,11 @@
 import { GlobalStyle } from "./GlobalStyledComponents";
+import { Homepage } from "./Homepage/Homepage";
 
 function App() {
   return (
     <div>
       <GlobalStyle/>
-      <h1>astromatch</h1>
-
+      <Homepage/>
 
     </div>
   );
