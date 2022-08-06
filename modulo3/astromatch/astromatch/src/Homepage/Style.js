@@ -5,7 +5,6 @@ export const StyledHomepage = styled.div`
     justify-content: center;
     background-color: white;
     margin: 50px 30% 0 30%;
-    padding-bottom: 100px;
+    padding-bottom: 300px;
     border: 1px solid;
-
 `
