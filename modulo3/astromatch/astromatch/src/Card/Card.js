@@ -5,31 +5,33 @@ const Div1 = styled.div`
     position: absolute;
     top: 550px;
     left: 655px;
-    
-    img {
-        width: 98px;
+    padding: 10px;
+
+    button {
+        padding: 15px;
+        background-color: red;
     }
+  
 `
 const Div2 = styled.div`
   position: absolute;
-  top: 558px;
-  left: 770px;
+  top: 550px;
+  left: 810px;
+  padding: 10px;
 
-  img {
-    width: 100px;
-  }
-
+    button {
+        padding: 15px;
+        background-color: green;
+    }
+ 
 `
 
-const Principal = styled.div`
-    //border: 1px solid;
-    
-`
+
 
 
 export function Card() {
     return (
-        <Principal>
+        <>
             <StyledCard>
                 <header>astromatch</header>
                 <img src="http://cbissn.ibict.br/images/phocagallery/galeria2/thumbs/phoca_thumb_l_image03_grd.png" />
@@ -40,11 +42,11 @@ export function Card() {
 
             </StyledCard>
             <Div1>
-                <img src="https://content.api.news/v3/images/bin/cbbf175216077fbe850d1430282373de?width=650" alt="icone X" />
+                <button> não gostei</button>
             </Div1>
             <Div2>
-                <img src="https://www.kindpng.com/picc/m/132-1323936_tinder-heart-and-x-hd-png-download.png" alt="icone s2" />
+                <button>gostei</button>
             </Div2>
-        </Principal>
+        </>
     )
 }
