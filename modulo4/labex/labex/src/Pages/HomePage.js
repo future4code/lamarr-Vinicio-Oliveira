@@ -1,22 +1,15 @@
 import React from "react";
 import { useNavigate } from "react-router-dom"
+import * as MyRoutes from "./Coordinator"
 
 function HomePage(){
-
     const navigate = useNavigate()
-    const goToListaViagens = () => {
-        navigate("/trips/list")
-    }
-
-    const goToAdminPage = () => {
-        navigate("/admin/trips/list")
-    }
-
+    
     return (
         <>
             <p>Para o usuário escolher entre Área Administrativa e Lista de Viagens</p>
-            <button onClick={goToListaViagens}>Lista de viagens</button>
-            <button onClick={goToAdminPage}>Area admin</button>
+            <button onClick={() => {MyRoutes.goToListaViagens(navigate)}}>Lista de viagens</button>
+            <button onClick={() => {MyRoutes.goToAdminPage(navigate)}}>Area admin</button>
         </>
     )
 
