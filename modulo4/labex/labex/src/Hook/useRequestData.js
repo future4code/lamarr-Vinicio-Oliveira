@@ -3,18 +3,21 @@ import axios from "axios";
 
 const useRequestData = (url) => {
     const [data, setData] = useState(undefined)
+    const [isLoading, setIsLoading] = useState(undefined)
+    const [erro, setErro] = useState(undefined)
 
     useEffect(() => {
-        axios.get(url)
-        .then(response => {
+        setIsLoading(true)
+        axios.get(url).then(response => {
+            setIsLoading(false)
             setData(response.data)
-        })
-        .catch(error => {
-            console.log(error)
+        }).catch(error => {
+            setIsLoading(false)
+            setErro(error)
         })
     }, [])
 
-    return data;
+    return [data, isLoading, erro];
 }
 
 export default useRequestData;
