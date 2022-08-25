@@ -9,7 +9,7 @@ function ListTripsPage() {
 
     const [data, isLoadingData, erroData] = useRequestData(`${BASE_URL}/trips/lists`)
 
-    const tripsList = data&&data.list.map((list) => {
+    const tripsList = data.trips.map((list) => {
         return <div>{list.headers}</div>
     })
 
@@ -21,7 +21,7 @@ function ListTripsPage() {
             
             {isLoadingData&&"...Carregando..."}
             {!isLoadingData&&data&&tripsList}
-            {!isLoadingData&&data&&console.log(data)}
+            {!isLoadingData&&!data&&erroData}
             
         </>
     )
