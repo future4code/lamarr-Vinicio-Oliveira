@@ -25,7 +25,7 @@ const add = (id, nome) => {
 
 }
 
-// console.log(add(1, "Cachorro"))
+console.log(add(1, "Cachorro"))
 
 let result
 
@@ -36,8 +36,9 @@ const tabuada = (param) => {
             console.log(`${param} x ${i} = ${result}`)
         } else {
             console.log( 'erro')
+            break;
         }
     }
 }
 
-tabuada('15')
+tabuada(12)
