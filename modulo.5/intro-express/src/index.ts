@@ -35,9 +35,9 @@ app.get('/posts', (req: Request, res: Response) => {
 })
 
 // Exercíco 8
-app.get('/posts/:id/:userId', (req: Request, res: Response) => {
+app.get('/posts/:userId', (req: Request, res: Response) => {
     const id = req.params.userId
-    const userVerifica = posts.find((post) => {
+    const userVerifica = posts.filter((post) => {
         return post.userId === Number(id)
     })
     if (!userVerifica) {
@@ -46,6 +46,7 @@ app.get('/posts/:id/:userId', (req: Request, res: Response) => {
     const post = posts.filter((posts) => {
         return posts.userId === Number(id)
     })
+    res.status(200).send(userVerifica)
 })
 
 
