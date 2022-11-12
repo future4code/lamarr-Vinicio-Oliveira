@@ -21,7 +21,7 @@ b)  UPDATE Actor SET nome = "JULIANA PAES" WHERE nome = "Juliana Paes";
 
 c)  UPDATE Actor SET nome = "Cléo Pires", salary = 425000, birth_date = "1982-10-02", gender = "female" WHERE id = 005;
 
-d)  - Após realizar oteste, vi que não da erro, porém, não muda nada na tabela
+d)  - Após realizar o teste, vi que não da erro, porém, não muda nada na tabela
 
 
 
@@ -32,8 +32,36 @@ b)  DELETE FROM Actor WHERE gender = "male" AND salary > 1000000;
 
 
 
-### EXERCÍCIO 3
-a)  
+### EXERCÍCIO 4
+a)  SELECT MAX(salary) FROM Actor;
+
+b)  SELECT MIN(salary) FROM Actor WHERE gender = "female";
+
+c)  SELECT COUNT(id) FROM Actor WHERE gender = "female";
+
+d)  SELECT SUM(salary) FROM Actor;
+
+
+### EXERCÍCIO 5
+a)  Ele retorna quantos tem de cada, nesse exercício estamos falando de gênero masculino e feminino, mas em uma outra tabela, pode ser qualquer outra coisa.
+
+b)  SELECT id, nome FROM Actor ORDER BY nome DESC;
+
+c)  SELECT * FROM Actor WHERE gender = "female" ORDER BY salary;
+
+d)  SELECT * FROM Actor ORDER BY salary DESC LIMIT 3;
+
+
+
+### EXERCÍCIO 6
+a)  ALTER TABLE Movies ADD playing_limit_date DATE;
+
+b)  ALTER TABLE Movies CHANGE Avaliação Avaliação FLOAT;
+
+c)  UPDATE Movies SET playing_limit_date = "2020-12-31" WHERE id = "001";
+
+d)  DELETE FROM Movies WHERE id = "001";
+
 
 
 
