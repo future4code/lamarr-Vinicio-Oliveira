@@ -3,6 +3,7 @@ import connection from "../database/connection"
 import { TABLE_PRODUCTS } from "../database/tableNames"
 import { Product } from "../class/Product"
 import { stringify } from "querystring"
+import { TProduct } from "../class/TProduct"
 
 export const createProduct = async (req: Request, res: Response) => {
     let errorCode = 400
@@ -22,9 +23,11 @@ export const createProduct = async (req: Request, res: Response) => {
         // }
 
         const newProduct = new Product(id, name, price)
-
-        await connection(TABLE_PRODUCTS).insert(newProduct)
-
+        const productDB = new TProduct(connection)
+        productDB.insertProduct(newProduct)
+        
+        
+        // await connection(TABLE_PRODUCTS).insert(newProduct)
         // await connection(TABLE_PRODUCTS).insert({
         //     id: newProduct.id,
         //     name: newProduct.name,

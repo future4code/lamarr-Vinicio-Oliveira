@@ -2,6 +2,7 @@ import { Request, Response } from "express"
 import connection from "../database/connection"
 import { TABLE_USERS } from "../database/tableNames"
 import { User } from "../class/User"
+import { TUser } from "../class/TUser"
 
 export const createUser = async (req: Request, res: Response) => {
     let errorCode = 400
@@ -21,9 +22,10 @@ export const createUser = async (req: Request, res: Response) => {
         // }
 
         const newUser = new User(id, email, password)
-
-        await connection(TABLE_USERS).insert(newUser)
-
+        const userDB = new TUser(connection)
+        userDB.insertUser(newUser)
+        
+        // await connection(TABLE_USERS).insert(newUser)
         // await connection(TABLE_USERS).insert({
         //     id: newUser.id,
         //     email: newUser.email,
