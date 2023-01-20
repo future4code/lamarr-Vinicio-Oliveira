@@ -1,6 +1,8 @@
 import { UserDatabase } from '../data/UserDatabase'
+import { user } from '../types/user';
 
 export class UserBusiness {
+
     createUser = async (input: any): Promise<void> => {
         try {
             const {name, email, password} = input;
@@ -28,4 +30,8 @@ export class UserBusiness {
             throw new Error(error.message);            
         }
     };
+
+    async get(): Promise<user[]> {
+        return await new UserDatabase().get();
+    }
 }

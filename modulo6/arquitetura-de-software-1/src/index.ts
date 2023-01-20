@@ -7,5 +7,6 @@ app.get("/", async function(){
    console.log("endpoint teste")
 })
 
+app.get("/all", userController.get)
 app.post('/createUser', userController.createUser)
 

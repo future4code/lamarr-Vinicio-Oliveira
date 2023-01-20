@@ -2,6 +2,7 @@ import { BaseDatabase } from "./BaseDatabase";
 import { user } from "../types/user";
 
 export class UserDatabase extends BaseDatabase {
+  
     createUser = async (user: user): Promise<void> => {
         try {
             await UserDatabase.connection.insert({
@@ -13,6 +14,27 @@ export class UserDatabase extends BaseDatabase {
             .into("User_Arq");
         } catch (error: any) {
             throw new Error(error.sqlMessage);            
+        }
+    }
+
+    async get(): Promise<user[]> {
+
+        try {
+
+            const users: user[] = [];
+
+            const result = await UserDatabase.connection()
+                .select("*")
+                .from("User_Arq");
+
+						for(let user of result){
+								users.push(user);
+						}
+
+            return users;
+
+        } catch (error:any) {
+            throw new Error(error.sqlMessage || error.message);
         }
     }
 }
