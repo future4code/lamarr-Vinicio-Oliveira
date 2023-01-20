@@ -34,4 +34,11 @@ export class UserBusiness {
     async get(): Promise<user[]> {
         return await new UserDatabase().get();
     }
+
+    async deleteUser(input: {id: string}) {
+        if(!input.id) {
+            throw new Error("Insira um id " );            
+        }
+        return await new UserDatabase().deleteUser(input.id)
+    }
 }

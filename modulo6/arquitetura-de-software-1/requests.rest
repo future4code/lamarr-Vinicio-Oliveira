@@ -1,6 +1,5 @@
-GET http://localhost:3003/getAll
+GET http://localhost:3003/all
 Content-Type: application/json
-
 
 ###
 
@@ -11,4 +10,13 @@ Content-Type: application/json
     "name": "Maria",
     "email": "maria.co@hotweels.com",
     "password": "cafeteira"
+}
+
+
+###
+DELETE http://localhost:3003/id
+Content-Type: application/json
+
+{
+    "id": "1674004801752"
 }

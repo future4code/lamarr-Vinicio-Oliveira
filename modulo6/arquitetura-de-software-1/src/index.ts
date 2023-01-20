@@ -9,4 +9,5 @@ app.get("/", async function(){
 
 app.get("/all", userController.get)
 app.post('/createUser', userController.createUser)
+app.delete('/id', userController.deleteUser)
 
