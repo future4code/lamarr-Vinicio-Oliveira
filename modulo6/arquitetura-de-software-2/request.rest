@@ -1,0 +1,23 @@
+GET http://localhost:3003/user/getAll
+Content-Type: application/json
+
+###
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name": "sandra",
+    "email": "sandra@email.com",
+    "password": "123456"
+}
+
+###
+POST http://localhost:3003/user/createMovie
+Content-Type: application/json
+
+{
+    "title": "Rambo",
+    "description": "Ação",
+    "duration_in_minutes": 120,
+    "year_of_release": 1990
+}
